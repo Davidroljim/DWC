@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="titulo"></title>
+    <script>
+        var myVar = setInterval(myTimer, 10000);
+        setTimeout(myStopFunction, 5000);
+    
+        function myTimer() {
+        var d = new Date();
+        var t = d.toLocaleTimeString();
+        document.getElementById("titulo").innerHTML = t;}
+
+        function myStopFunction() {
+            clearInterval(myVar);
+        }
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
