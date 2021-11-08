@@ -5,7 +5,7 @@ var valores = [];
   do{
     
     //Introduzco los datos que me pasan por parámetros
-    datos = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento","nombre,apellidos,DNI,fecha de nacimiento");
+    datos = prompt("Introduce tu nombre, apellidos, DNI y fecha de nacimiento si deseas finalizar introduzca el campo vacío","nombre,apellidos,DNI,fecha de nacimiento");
     //Comprobación para que no me meta el ultimo array vacio
     if (datos!="") {
         valores.push(datos.split(","));
@@ -50,6 +50,6 @@ if (buscardato!=1) {
     document.write("No se ha encontrado ningun dato");
 }
 
-//recorreMatriz(valores);
-//document.write("<br><br>");
+recorreMatriz(valores);
+document.write("<br><br>");
 buscardato(valores);
