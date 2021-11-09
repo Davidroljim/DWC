@@ -7,4 +7,4 @@ var rellenaMatriz = ()=>{
         }
       }    return matriz;
 }
-document.write(rellenaMatriz())
+document.write(rellenaMatriz());
