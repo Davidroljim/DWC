@@ -56,3 +56,18 @@ if (modulos.has("DAW")) {
     document.write("No existe el modulo DAW");
 
 }
+
+//Ordena alfabeticamente 
+
+
+const modulo = new Map();
+modulo.set("DWECL","Desarrollo Web en Entorno Cliente");
+modulo.set("DWECS","Desarrollo Web en Entorno Servidor");
+modulo.set("DIW","Diseño Interfaces Web");
+modulo.set("DAW","Despliegue Aplicaciones Web");
+
+var furbo = modulo.keys();
+var ordenado = [...furbo].sort();
+console.log(ordenado);
+//const mapSort = new Map([...modulo.entries()].sort());
+//console.log(mapSort);
