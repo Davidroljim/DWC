@@ -35,4 +35,5 @@ var aula = new Aula (arrayAlum);
 
 //aula.imprimeAlumno();
 
-document.write(aula.buscarDNI("2349858y"));
+//document.write(aula.buscarDNI("2349858y"));
+aula.ordenarNota("2349858y");

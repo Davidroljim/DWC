@@ -16,20 +16,24 @@ class Aula{
     }
 
     buscarDNI(dni){
+        var furbo = "";
         this.alumnos.forEach(element => {
-            var array = [];
+            var arrayf = [];
             //convierto el objeto en un array
-            array=Object.values(element);
-            if (array[2] == dni) {
-                element.imprimeAlumno();
+            arrayf=Object.values(element);
+            if (arrayf[2] == dni) {
+                 return  element;
             }
+            
         });        
     }
 
     ordenarNota(dni){
-    this.buscarDNI(dni);
-
-
+        //var arrayf =null ;
+        //arrayf=(this.buscarDNI(dni));
+        var alumnoF = new Alumno (this.buscarDNI(dni));
+        console.log(alumnoF);
+        //console.log(arrayf.map.sort(function(a,b){return a[1]-b[1]}));
     }
 
     ordenaApellido(){
