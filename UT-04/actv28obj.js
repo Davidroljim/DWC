@@ -7,7 +7,7 @@ class Persona{
 
     };
     imprimePersona (){
-        datos = this.nombre+","+this.apellido+","+this.dni+","+this.fnacimiento;
-        return datos;
+        document.write(this.nombre+","+this.apellido+","+this.dni+","+this.fnacimiento);
+        
     }
 };

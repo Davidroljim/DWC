@@ -1,5 +1,8 @@
-var per1=new Persona("David","Roldán","1234134e","2001-12-12");
+nombre="David";
+apellido="Roldán";
+dni="1234134e";
+fecha="2001-12-12";
 
-var persona = new Persona(per1);
+var persona = new Persona(nombre,apellido,dni,fecha);
 
 console.log(persona.imprimePersona());
