@@ -15,30 +15,51 @@ class Aula{
         });
     }
 
-    buscarDNI(dni){
-        var furbo = "";
-        this.alumnos.forEach(element => {
-            var arrayf = [];
-            //convierto el objeto en un array
-            arrayf=Object.values(element);
-            if (arrayf[2] == dni) {
-                 return  element;
-            }
+    // buscarDNI(dni){
+    //     this.alumnos.forEach(element => {
+    //         var arrayf = [];
+    //         //convierto el objeto en un array
+    //         //arrayf=Object.values(element);
+    //         if (element.dni == dni) {
+    //             var alumno = new Aula();
+    //             alumno = element;
+    //              return alumno;
+    //         }
             
-        });        
-    }
+    //     });        
+    // }
+
+    buscarDNI(dni){
+
+        /*for (const alum of this.alumnos) {
+            if (alum.dni==dni) {
+                return alum;
+            }
+        }
+        return false;*/
+
+        var resultado=this.alumnos.filter((alumno)=>alumno.dni==dni);
+        return resultado;
+    }    
+
+
 
     ordenarNota(dni){
-        //var arrayf =null ;
-        //arrayf=(this.buscarDNI(dni));
-        var alumnoF = new Alumno (this.buscarDNI(dni));
-        console.log(alumnoF);
-        //console.log(arrayf.map.sort(function(a,b){return a[1]-b[1]}));
+        var ordenado = this.buscarDNI(dni);
+        const mapSort1 = new Map([...ordenado.notas.entries()].sort((a,b) => b[1]- a[1]));
+        return mapSort1;
     }
 
-    ordenaApellido(){
-
-    }
+    ordenarPorApellido(){
+        return this.alumnos.sort((alumno1,alumno2)=>{
+        if (alumno1.apellido1.toUpperCase() < alumno2.apellido1.toUpperCase()){
+        return 1;
+        } else if (alumno1.apellido1.toUpperCase() > alumno2.apellido1.toUpperCase()){
+        return -1;
+        }
+        return 0;
+        });
+        }
 
     
 };
