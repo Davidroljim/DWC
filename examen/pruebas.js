@@ -61,11 +61,11 @@ return arrayCitas;
 }*/
 
 function buscarCita(arrayCitas,dni) {
-    return arrayCitas.find((cita) => cita.dni === dni);
+    return arrayCitas.find((cita) => cita.paciente.dni === dni);
 
 }
 
-console.log(buscarCita (arrayCitas,"45763233u"));
+//console.log(buscarCita (arrayCitas,"45763233u"));
 
 
 //eliminarCita: una función que busque una cita. Si no la encuentra, la función imprimirá un mensaje avisando de que la cita no ha sido encontrada.
@@ -81,7 +81,7 @@ console.log(buscarCita (arrayCitas,"45763233u"));
 function eliminarCita(arrayCitas, nombre) {
     var oldLength = arrayCitas.length;
     arrayCitas = arrayCitas.filter((cita) => {
-      return cita.nombre !== nombre;
+      return cita.paciente.nombre !== nombre;
     });
     if (oldLength != arrayCitas.length) {
       console.log("Se ha eliminado un elemento");
