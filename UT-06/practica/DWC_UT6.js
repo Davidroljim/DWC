@@ -1,10 +1,7 @@
 window.addEventListener("load",iniciar)
 
 function iniciar(){
-    var body = document.getElementById("body");
-    body.addEventListener('click', cuerpo);
-
-    desplegable();
+    desplegableTitulo();
 }
 
 function cuerpo(){
@@ -72,25 +69,49 @@ function cuerpo(){
     }
 }
 
- /*   function desplegable (){
-        var fotos = document.getElementsByTagName('img');
+function desplegableTitulo(){
+    var titulo = document.getElementsByTagName('h1');
+
+
+    for (let i = 0; i<titulo.length; i++){
+        titulo[i].addEventListener('click', ocultarMostrarTitulo);
+    }
+
+
     
-        for (let i = 0; i<fotos.length; i++){
-            fotos[i].addEventListener('click', ocultarMostrar);
-        }
+}
+
+function desplegable(){
+
+
+    var fotos = document.getElementsByTagName('img');
+
+    for (let z = 0; z<fotos.length; z++){
+        fotos[z].addEventListener('click', ocultarMostrar);
     }
     
-    function ocultarMostrar(){
-        
-        if (this.nextSibling.style.visibility=="hidden") {
-            visible="visible";
-        } else{
-            visible="hidden";
-        }
+}
+
+function ocultarMostrar(){
     
-        var padre = this.parentNode;
-        var arrayHijos = padre.childNodes;
-        for(let z= 1; z<arrayHijos.length; z++){
-            arrayHijos[z].style.visibility=visible;
-        }
-    }*/
+    if (this.nextSibling.style.display=="none") {
+        visible="";
+    } else{
+        visible="none";
+    }
+
+    var padre = this.parentNode;
+    var arrayHijos = padre.childNodes;
+    for(let z= 1; z<arrayHijos.length; z++){
+        arrayHijos[z].style.display=visible;
+    }
+}
+function ocultarMostrarTitulo(){
+    var ocultar=document.getElementsByTagName('div')
+    if (ocultar[0]==undefined) {
+        cuerpo();
+        desplegable();
+    }else{
+        ocultar[0].remove();
+    }
+}
