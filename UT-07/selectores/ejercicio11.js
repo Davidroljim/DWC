@@ -1,6 +1,12 @@
 $(document).ready(function(){
     $("button").click(function(){
-        $("div:first").toggle();
-        $(this).text("Mostrar");
+        $(this).nextAll().toggle();
+        if ($(this).text()=="hide") {
+            $(this).text("show");
+
+        }else{
+            $(this).text("hide");
+        }
+        
     });
   });
