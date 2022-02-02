@@ -1,4 +1,4 @@
-$(function () {
+/*$(function () {
     $("#boton").click(function(){
         $.ajax({
             url:   'ejercicio9.php',
@@ -8,11 +8,15 @@ $(function () {
             },
             success:  function (response) {
                     response = JSON.parse(response);
-                   // suma = response.valor1+response.valor2;
                 
                     $("#resultado").html(response.a);
 
             }
             });
         });
-});
+});*/
+
+$.post( "ejercicio9.php", function( data ) {
+        datos = JSON.parse(data);
+        $( ".result" ).html( datos.a );
+      });
